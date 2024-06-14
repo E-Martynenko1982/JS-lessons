@@ -34,13 +34,28 @@
 //find passed students:!studentsForRetake.includes(student)
 //apply message for new arr .map(student => `Good job, ${student}`)
 
-const getMessagesForBestStudents = (allStudentsList, studentsForRetake) => {
-  return allStudentsList.filter(student => !studentsForRetake.includes(student)).map(student => `Good job, ${student}`)
-};
+// const getMessagesForBestStudents = (allStudentsList, studentsForRetake) => {
+//   return allStudentsList.filter(student => !studentsForRetake.includes(student)).map(student => `Good job, ${student}`)
+// };
 
 
-const allStudTest1 = ['Den', 'John', 'Ann', 'Mike'];
-const retakeStudTest1 = ['John', 'Mike'];
-console.log(getMessagesForBestStudents(allStudTest1, retakeStudTest1))
+// const allStudTest1 = ['Den', 'John', 'Ann', 'Mike'];
+// const retakeStudTest1 = ['John', 'Mike'];
+// console.log(getMessagesForBestStudents(allStudTest1, retakeStudTest1))
 
-  ; // ===> ['Good job, Den', 'Good job, Ann']
+//   ; // ===> ['Good job, Den', 'Good job, Ann']
+
+
+//5)
+//check array for isArray and return null if argument is not array(constructor if)
+//apply reduce for pow elements to 2
+
+function squareArray(arr) {
+  if (!Array.isArray(arr)) {
+    return null;
+  }
+
+  return arr.map(elem => elem ** 2);
+}
+
+console.log(squareArray([2, 4, 5]));
