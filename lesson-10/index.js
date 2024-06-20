@@ -4,30 +4,24 @@
 
 // console.log(getFiniteNumbers([1, 4, 1.24, '12', null])) // => [1, 4, 1.24]
 
-
 // this method reform value of each index arr to number and check if it is final number
 
 // const getFiniteNumbersV2 = arr => arr.filter(item => isFinite(item));
 // ;
 // console.log(getFiniteNumbersV2([1, 4, 1.24, '12', null]));
 
-
 // const getNaN = arr => arr.filter(item => Number.isNaN(item));
 
 // console.log(getNaN([1, 4, 1.24, '12', null, NaN, Infinity]));
 
-
 // const getNaNV2 = arr => arr.filter(item => isNaN(item));
 
-
 // console.log(getNaNV2([1, 4, 1.24, '12', null, NaN, Infinity]));
-
 
 // --------------------
 // const getIntegers = arr => arr.filter(item => Number.isInteger(item));
 
 // console.log(getIntegers([1, 4, 1.24, '12', null, NaN, Infinity]));
-
 
 // --------------------
 
@@ -35,7 +29,6 @@
 // const getParsedIntegers = arr => arr.map(item => Number.parseInt(item));
 
 // console.log(getParsedIntegers([12.377, 5, 6, 17.6, null]));
-
 
 // // eslint-disable-next-line radix
 // const getParsedIntegersV2 = arr => arr.map(item => parseInt(item));
@@ -94,43 +87,43 @@
 // check presence of integer number in interval
 // round arguments from and to to integer numbers with methods ceil and floor
 // check integered numbers minint > maxint => return null if false
-// assign empty arr
-// apply loop push the items with help of getRandomInt func to arr
-// or apply Array.from method
-const getRandomInt = (min, max) => {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+// assign new array with length from argument apply constructor new Array and fill it with method fill undefined elements
+// apply method map to change elements of arr to random numbers with func getRandomint
+
+// const getRandomInt = (min, max) => {
+//   return Math.floor(Math.random() * (max - min + 1)) + min;
+// };
+
+// // eslint-disable-next-line consistent-return
+// const getRandomNumbers = (length, from, to) => {
+//   if (from > to) {
+//     return null
+//   }
+
+//   const minInt = Math.ceil(from);
+//   const maxInt = Math.floor(to);
+
+//   if (minInt > maxInt) {
+//     return null
+//   }
+//   const randomIntegers = new Array(length).fill()
+
+//   return randomIntegers.map(() => getRandomInt(minInt, maxInt))
+
+// }
+
+// console.log(getRandomNumbers(5, 1.4, 3.22))
+
+// --------------------
+
+const superRound = (num, prec) => {
+  return [
+    Math.floor(num * 10 ** prec) / 10 ** prec,
+    Math.trunc(num * 10 ** prec) / 10 ** prec,
+    Math.ceil(num * 10 ** prec) / 10 ** prec,
+    Math.round(num * 10 ** prec) / 10 ** prec,
+    +num.toFixed(prec),
+  ];
 };
 
-// eslint-disable-next-line consistent-return
-const getRandomNumbers = (length, from, to) => {
-  if (from > to) {
-    return null
-  }
-
-  const minInt = Math.ceil(from);
-  const maxInt = Math.floor(to);
-
-  if (minInt > maxInt) {
-    return null
-  }
-
-  const randomIntegers = []
-  for (let index = 0; index < length; index++) {
-    randomIntegers.push(getRandomInt(minInt, maxInt))
-
-  }
-  return randomIntegers;
-  // return Array.from({ length }, () => getRandomInt(minInt, maxInt))
-
-}
-
-console.log(getRandomNumbers(7, 2.11, 2.9))
-
-
-
-
-
-
-
-
-
+console.log(superRound(6.11, 3))
