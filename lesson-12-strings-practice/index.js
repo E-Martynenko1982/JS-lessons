@@ -28,7 +28,7 @@ const calc = (str) => {
 
   // return str + ' = ' + result;
   const [a, operator, b] = str.split(' ');
-  let result
+  let result;
 
   switch (operator) {
     // eslint-disable-next-line no-unused-expressions
@@ -36,7 +36,6 @@ const calc = (str) => {
       result = Number(a) + Number(b);
       break;
 
-    // eslint-disable-next-line no-unused-expressions
     case '-':
       result = Number(a) - Number(b);
       break;
@@ -49,8 +48,7 @@ const calc = (str) => {
       result = +a / +b;
       break;
   }
-
   return `${str} = ${result}`
 };
 
-console.log(calc(('16 / 4')))
+console.log(calc(('16 ** 4')))
