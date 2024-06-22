@@ -1,3 +1,8 @@
+const arr = [0];
+console.log(arr.length);
+
+
+
 // in - arr, out - new arr
 // apply filter method wich in - element of the arr, out-boolean: if true - element stay still in  new arr
 // const getFiniteNumbers = arr => arr.filter(item => Number.isFinite(item));
