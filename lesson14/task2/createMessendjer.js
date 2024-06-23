@@ -4,6 +4,7 @@ export default function createMessenger() {
   let sender = 'Gromcode';
   let name = 'Anna'
 
+
   function setMessage(text) {
     message = text
   }
