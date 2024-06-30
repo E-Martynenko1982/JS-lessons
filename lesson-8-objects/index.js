@@ -106,17 +106,43 @@
 // getAdults
 // apply for in method with check element of object and assing it in new object
 // then return new object
-const getAdults = obj => {
+// const getAdults = obj => {
 
-  const result = {}
+//   const result = {}
 
-  for (const key in obj) {
-    if (obj[key] >= 18) {
-      result[key] = obj[key]
+//   for (const key in obj) {
+//     if (obj[key] >= 18) {
+//       result[key] = obj[key]
+//     }
+//   }
+//   return result
+// }
+
+// console.log(getAdults({ 'John Doe': 19, Tom: 17, Bob: 18 }))
+// ==> { 'John Doe': 19, Bob: 18 }
+
+// const o1 = { a: 1 };
+// const o2 = { b: 2 };
+// const o3 = { c: 3 };
+// const arr = [o1, o2, o3];
+
+// const obj = Object.assign({}, ...arr);
+// console.log(obj)
+
+// console.log(o1)
+function countPositivesSumNegatives(input) {
+  let countPositives = 0;
+  let sumNegatives = 0;
+
+  for (let index = 0; index < input.length; index++) {
+    if (input[index] > 0) {
+      countPositives++;
+    } else if (input[index] < 0) {
+      sumNegatives += input[index];
     }
   }
-  return result
+
+  return [countPositives, sumNegatives];
 }
 
-console.log(getAdults({ 'John Doe': 19, Tom: 17, Bob: 18 }))
-  ; // ==> { 'John Doe': 19, Bob: 18 }
+console.log(countPositivesSumNegatives([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15]))

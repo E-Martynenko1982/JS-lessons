@@ -158,12 +158,15 @@
 // check array for isArray and return null if argument is not array(constructor if)
 // apply reverse method with spred function method
 
-const reverseArray = arr => {
-  if (!Array.isArray(arr)) {
-    return null;
-  }
+// const reverseArray = arr => {
+//   if (!Array.isArray(arr)) {
+//     return null;
+//   }
 
-  return [...arr].reverse();
-}
+//   return [...arr].reverse();
+// }
 
-console.log(reverseArray([1, 2, 3]));
+// console.log(reverseArray([1, 2, 3]));
+
+
+
