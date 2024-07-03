@@ -4,4 +4,3 @@ export const createButton = (buttonText) => {
   buttonElem.textContent = buttonText;
   bodyElem.appendChild(buttonElem)
 };
-createButton('Play')
