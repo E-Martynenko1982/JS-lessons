@@ -1,6 +1,7 @@
 
 export const getTitle = () => {
-  const result = document.querySelector('.title')
+  const result = document.querySelector('.title').textContent;
+  return result
 }
 export const getDescription = () => document.querySelector('.about').innerText
 
