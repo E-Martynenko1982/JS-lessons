@@ -1,5 +1,5 @@
 const elemCheckbox = document.querySelector('.task-status');
-console.log(elemCheckbox.checked);
+
 
 
 const checkboxHandler = () => {
