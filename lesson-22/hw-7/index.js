@@ -5,4 +5,4 @@ const inputHandler = (event) => {
 
 };
 
-elemInput.addEventListener("input", inputHandler);
+elemInput.addEventListener("change", inputHandler);
