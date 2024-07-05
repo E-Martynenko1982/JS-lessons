@@ -61,7 +61,7 @@ const createTask = () => {
 
 
 const createBtnElem = document.querySelector('.create-task-btn');
-createBtnElem.addEventListener('click', createTask);//
+createBtnElem.addEventListener('click', createTask);
 
 
 renderTasks(tasks)
