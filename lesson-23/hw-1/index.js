@@ -49,7 +49,7 @@ const createTask = () => {
   if (!text) return;
 
   const newTask = {
-    id: String(Date.now()),// замість ід  - поточна дата
+    id: String(Date.now()),
     text,
     done: false,
   }
