@@ -1,6 +1,32 @@
 // Цей масив використовується зберігання всіх завдань. Кожне завдання представлене об'єктом із полями
 // 'id', 'text' 'done'
-const tasks = [];
+const tasks = [
+  {
+    id: String(Date.now()),
+    text: 'Test a car',
+    done: false,
+  },
+  {
+    id: String(Date.now()),
+    text: 'Swim in river',
+    done: false,
+  },
+  {
+    id: String(Date.now()),
+    text: 'Dinner with wife',
+    done: false,
+  },
+  {
+    id: String(Date.now()),
+    text: 'Learn task with Gromcode',
+    done: true,
+  },
+  {
+    id: String(Date.now()),
+    text: 'Take a hour of english lesson',
+    done: true,
+  }
+];
 
 // Функція renderTasks приймає масив завдань (tasksList) та відображає їх у вигляді списку на сторінці.
 
