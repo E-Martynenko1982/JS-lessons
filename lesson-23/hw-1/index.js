@@ -42,3 +42,29 @@ const onCheckboxClick = event => {
   renderTasks(tasks) //повторне оновлення задач
 };
 
+
+
+// Ця функція створює нове завдання і додає її до масиву завдань при натисканні на кнопку "Create".
+const createTask = () => {
+  const taskInputElem = document.querySelector('.task-input');
+  const text = taskInputElem.value.trim();// отримання значень вводу без пробілів
+
+  if (!text) return;// перевірка що поле не пусте
+
+  const newTask = {// створення нової задачі
+    id: String(Date.now()),// замість ід  - поточна дата
+    text,
+    done: false,
+  }
+
+  tasks.push(newTask);// додавання задачі в масив
+  taskInputElem.value = '' // очистка поля вводу
+  renderTasks(tasks) // повторний рендеринг списку
+};
+
+// Додавання обробника події на кнопку Create. При натисканні на кнопку викликається функція createTask.
+const createBtnElem = document.querySelector('.create-task-btn');
+createBtnElem.addEventListener('click', createTask);//
+
+// Виклик функції renderTasks для початкового рендерингу списку завдань, навіть якщо він порожній
+renderTasks(tasks)
