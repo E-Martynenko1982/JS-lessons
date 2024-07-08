@@ -1,5 +1,5 @@
 export const getLocalStorageData = () => {
-  Object.entries(localStorage)
+  return Object.entries(localStorage)
     .reduce((acc, [key, value]) => {
       let newValue;
       try {
