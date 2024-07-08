@@ -40,6 +40,8 @@ const renderTasks = tasksList => {
     // створює елементи списку для кожного завдання
     .map(({ id, text, done }) => {
       // створюємо елементи списку і додаємо для них класи з перевіркою якщо статус done-true то навішуємо інший класс для елементів що зроблені(зачеркнуті)
+
+
       const listItemElem = document.createElement('li');
       listItemElem.classList.add('list__item');
       if (done === true) {
