@@ -1,4 +1,4 @@
-const getLocalStorageData = () => {
+export const getLocalStorageData = () => {
   Object.entries(localStorage)
     .reduce((acc, [key, value]) => {
       let newValue;
