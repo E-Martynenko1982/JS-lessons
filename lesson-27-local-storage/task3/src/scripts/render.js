@@ -21,11 +21,13 @@ const createCheckbox = ({ done, id }) => {
 const createListItem = ({ text, done, id }) => {
   const listItemElem = document.createElement("li");
   listItemElem.classList.add("list__item");
+  const textNode = document.createTextNode(text);
   if (done) {
     listItemElem.classList.add("list__item_done");
   }
   const checkboxElem = createCheckbox({ done, id });
-  listItemElem.append(checkboxElem, document.createTextNode(text));
+  listItemElem.append(checkboxElem);
+  listItemElem.append(textNode);
   return listItemElem;
 };
 
