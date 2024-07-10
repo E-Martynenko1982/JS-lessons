@@ -16,3 +16,4 @@ export const compose = (...funcs) => value => {
 //   div4,
 // )
 // console.log(doEverything(3))
+
