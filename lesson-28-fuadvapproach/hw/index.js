@@ -1,4 +1,4 @@
-const shmoment = initialDate => {
+export const shmoment = initialDate => {
   let date = new Date(initialDate);
 
   const addTime = (unit, value) => {
