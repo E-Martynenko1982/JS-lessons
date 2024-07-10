@@ -3,18 +3,13 @@ export const addImage = (imgSrc, callback) => {
   imgElem.setAttribute("alt", "My Photo");
   imgElem.src = imgSrc;
   const containerElem = document.querySelector(".page");
-
-
-
   containerElem.append(imgElem);
 
   const onImageLoaded = () => {
-    const { width, height } = imgElem;
-    callback(null, { width, height })
-
+    // const { width, height } = imgElem;
+    callback(null, imgElem)
   };
   imgElem.addEventListener('load', onImageLoaded)
-
 
   imgElem.addEventListener('error', () => callback('Image load is failed'))
 
