@@ -3,7 +3,7 @@ export const addImage = (imgSrc, callback) => {
   imgElem.setAttribute("alt", "My Photo");
   imgElem.src = imgSrc;
   const containerElem = document.querySelector(".page");
-  console.log(containerElem)
+
 
 
   containerElem.append(imgElem);
@@ -34,9 +34,9 @@ const onImageLoaded = (error, data) => {
 
 };
 
-document.addEventListener('DOMContentLoaded', () => {
-  addImage(imgSrc, onImageLoaded);
-});
+
+addImage(imgSrc, onImageLoaded);
+
 
 
 
