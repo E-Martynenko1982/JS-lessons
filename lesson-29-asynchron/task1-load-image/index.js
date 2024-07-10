@@ -34,7 +34,9 @@ const onImageLoaded = (error, data) => {
 
 };
 
-addImage(imgSrc, onImageLoaded);
+document.addEventListener('DOMContentLoaded', () => {
+  addImage(imgSrc, onImageLoaded);
+});
 
 
 
