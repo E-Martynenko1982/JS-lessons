@@ -6,5 +6,5 @@ export const initTodoListHandlers = () => {
   createBtnElem.addEventListener('click', createTask);
 
   const listElem = document.querySelector(".list");
-  listElem.addEventListener("change", onToggleTask);
+  listElem.addEventListener("click", onToggleTask);
 };
