@@ -1,3 +1,4 @@
+
 export const addImage = imgSrc => {
   const p = new Promise((resolve, reject) => {
     const imgElem = document.createElement("img");
@@ -24,4 +25,3 @@ resultPromise.then(img => {
   console.log(img);
 }).catch(error => console.log(error)
 )
-
