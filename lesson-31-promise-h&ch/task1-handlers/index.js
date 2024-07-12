@@ -1,4 +1,4 @@
- const requestUserData = userId => {
+export const requestUserData = userId => {
   
   return new Promise((resolve, reject) => {
     
