@@ -12,12 +12,9 @@ resolve(number)
     resolve(result)
   }, 500);
 }))
-.then(value => new Promise((resolve) => {
-  setTimeout(() => {
-    const result = value * 2;
-    console.log(`Squared value: ${result}`)
-    resolve(result)
-  }, 0);
-}))
+.then(value => {
+  const result = value * 2;
+    console.log(`Doubled value: ${result}`)
+})
  
-asyncCalculator(5)
+
