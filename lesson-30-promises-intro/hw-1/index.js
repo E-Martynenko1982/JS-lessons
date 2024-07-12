@@ -1,26 +1,19 @@
-export const addImageV2 = imgSrc => {
-  const p = new Promise((resolve, reject) => {
-    const imgElem = document.createElement("img");
-    imgElem.setAttribute("alt", "My Photo");
-    imgElem.src = imgSrc;
-    const containerElem = document.querySelector(".page");
-    containerElem.append(imgElem);
+const userDataPromise = new Promise(resolve => {
+  setTimeout(() => {
+    resolve({ name: 'Tom', age: 17 });
+  }, 1000);
+});
+console.log(userDataPromise) //object
 
-    const onImageLoaded = () => {
-      const { width, height } = imgElem;
-      resolve({ width, height });
-    };
-    imgElem.addEventListener('load', onImageLoaded)
+userDataPromise.then(function onSuccess(userData) {
+  console.log(userData)
 
-    imgElem.addEventListener('error', () => reject(new Error('Image load is failed')))
-  });
-  return p;
-};
+});
 
-const imgSrc = 'https://p.bigstockphoto.com/GeFvQkBbSLaMdpKXF1Zv_bigstock-Aerial-View-Of-Blue-Lakes-And--227291596.jpg';
-const resultPromise = addImageV2(imgSrc);
+console.log(userDataPromise)
 
-resultPromise.then(img => {
-  console.log(img);
-}).catch(error => console.log(error)
-)
+
+userDataPromise.then(function onSuccess(data) {
+  console.log(`My name is ${data.name}. I am ${data.age} years old`)
+
+});
