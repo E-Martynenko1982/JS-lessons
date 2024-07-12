@@ -17,7 +17,7 @@ asyncCalculator(5)
       setTimeout(() => {
         console.log(`Squared value: ${data * data}`);
         resolve(data * data);
-      }, 500);
+      }, 1000);
     });
   })
   .then(data => {
