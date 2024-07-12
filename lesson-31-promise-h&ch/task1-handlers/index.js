@@ -21,3 +21,22 @@ export const requestUserData = userId => {
 };
    
  
+requestUserData('user123')
+  .then(data => {
+    console.log('User data:', data);
+  })
+  .catch(error => {
+    console.error('Error:', error.message);
+  })
+  .finally(() => {
+    console.log('finally')
+    
+  })
+
+requestUserData('broken')
+  .then(data => {
+    console.log('User data:', data);
+  })
+  .catch(error => {
+    console.error('Error:', error.message);
+  });
