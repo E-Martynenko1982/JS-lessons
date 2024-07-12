@@ -1,4 +1,4 @@
-const asyncCalculator = number => {
+export const asyncCalculator = number => {
   return new Promise((resolve, reject) => {
     if (number === 5) {
       setTimeout(() => {
