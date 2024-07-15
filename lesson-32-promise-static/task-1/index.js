@@ -12,7 +12,7 @@ const sumNumbers = (numbers) => {
     .reduce((acc, number) => acc + Number(number), 0)
 };
 
-const asyncSum = (...arrNum) => {
+export const asyncSum = (...arrNum) => {
   return Promise.all(arrNum)
     .then(numbers => sumNumbers(numbers))
     .catch(() => Promise.reject(new Error('Can\'t calculate')));
