@@ -15,13 +15,13 @@ export function getTaskById(taskId) {
     .then(response => response)
 }
 
-getTaskById('2')
-  .then(task => console.log(task))
-// examples
-getTasksList().then(tasksList => {
-  console.log(tasksList); // ==> [ {'id':'1', 'isDone':false ... }, {'id':'2', 'isDone':false ... }, ...]
-});
+// getTaskById('2')
+//   .then(task => console.log(task))
+// // examples
+// getTasksList().then(tasksList => {
+//   console.log(tasksList); // ==> [ {'id':'1', 'isDone':false ... }, {'id':'2', 'isDone':false ... }, ...]
+// });
 
-getTaskById('2').then(taskData => {
-  console.log(taskData); // ==> { 'id': '2', 'text': 'District Communications Specialist', 'isDone': false, 'createdDate': 1651499052, 'finishedDate': 1651499052 }
-});
+// getTaskById('2').then(taskData => {
+//   console.log(taskData); // ==> { 'id': '2', 'text': 'District Communications Specialist', 'isDone': false, 'createdDate': 1651499052, 'finishedDate': 1651499052 }
+// });
