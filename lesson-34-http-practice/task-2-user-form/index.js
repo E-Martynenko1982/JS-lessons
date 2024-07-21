@@ -1,15 +1,12 @@
 const formElem = document.querySelector('.login-form');
 const buttonElem = document.querySelector('.submit-button');
-
-formElem.addEventListener(
-  'email',
-  () => {
-    if (formElem.checkValidity()) {
-      buttonElem.removeAttribute("disabled");
-    }
-  },
-  false,
-);
+formElem.addEventListener('input', () => {
+  if (formElem.checkValidity()) {
+    buttonElem.removeAttribute('disabled');
+  } else {
+    buttonElem.setAttribute('disabled', true);
+  }
+});
 
 
 
