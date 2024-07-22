@@ -22,10 +22,8 @@ export function getUsersList() {
       'Content-Type': 'application/json;charset=utf-8'
     },
   })
-    .then(response => response.json())
-    .then(users => {
-      return users
-    })
+    .then(response => response.json()).then(data => data)
+
 }
 
 export function getUserById(userId) {
@@ -36,9 +34,7 @@ export function getUserById(userId) {
     },
   })
     .then(response => response.json())
-    .then(user => {
-      return user
-    })
+
 }
 
 
@@ -51,9 +47,7 @@ export function createUser(userData) {
     body: JSON.stringify(userData),
   })
     .then(response => response.json())
-    .then(userData => {
-      return userData
-    })
+
 
 }
 
@@ -66,9 +60,7 @@ export function deleteUser(userId) {
 
   })
     .then(response => response.json())
-    .then(deletedUser => {
-      return deletedUser
-    })
+
 }
 
 export function updateUser(userId, userData) {
@@ -80,9 +72,7 @@ export function updateUser(userId, userData) {
     body: JSON.stringify(userData),
   })
     .then(response => response.json())
-    .then(updatedUser => {
-      updatedUser
-    })
+
 }
 
 
