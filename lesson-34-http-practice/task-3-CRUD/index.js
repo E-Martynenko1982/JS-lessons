@@ -16,24 +16,12 @@ const baseUrl = 'https://6698d3872069c438cd7036bb.mockapi.io/api/V1/users';
 // }
 
 export function getUsersList() {
-  return fetch(baseUrl, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json;charset=utf-8'
-    },
-  })
-    .then(response => response.json())
+  return fetch(baseUrl).then(response => response.json())
 
 }
 
 export function getUserById(userId) {
-  return fetch(`${baseUrl}/${userId}`, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json;charset=utf-8'
-    },
-  })
-    .then(response => response.json())
+  return fetch(`${baseUrl}/${userId}`).then(response => response.json())
 
 }
 
