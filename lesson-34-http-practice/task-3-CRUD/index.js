@@ -42,10 +42,6 @@ export function createUser(userData) {
 export function deleteUser(userId) {
   return fetch(`${baseUrl}/${userId}`, {
     method: 'DELETE',
-    headers: {
-      'Content-Type': 'application/json;charset=utf-8'
-    },
-
   })
     .then(response => response.json())
 
