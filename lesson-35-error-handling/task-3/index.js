@@ -27,11 +27,14 @@ const onSearchUser = () => {
     .then(url => fetchRepositories(url))
     .then(reposList => {
       renderRepos(reposList);
-      hideSpinner();
+
     })
     .catch(err => {
-      hideSpinner();
+
       alert(err.message);
+    })
+    .finally(() => {
+      hideSpinner();
     });
 };
 
