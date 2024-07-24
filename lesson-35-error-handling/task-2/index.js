@@ -17,7 +17,7 @@ failRequest
     throw new Error("Server error"); // (2)
   })
   .then(function onSuccess2(data) {
-    console.log('onSuccess2', data);
+    return data;
   })
   .catch(function onError3(error) {
     console.error('onError3', error.message);
