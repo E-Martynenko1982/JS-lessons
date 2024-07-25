@@ -1,4 +1,4 @@
-const getUsersBlogs = async (users) => {
+export const getUsersBlogs = async (users) => {
   try {
     const requests = users.map(user => fetch(`https://api.github.com/users/${user}`).then(response => {
       if (!response.ok) {
@@ -14,4 +14,3 @@ const getUsersBlogs = async (users) => {
   }
 };
 
-getUsersBlogs(['google', 'facebook', 'reactjs']).then(linksList => console.log(linksList))
