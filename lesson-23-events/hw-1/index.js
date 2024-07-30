@@ -30,9 +30,9 @@ const tasks = [
 
 
 // Функція renderTasks приймає масив завдань (tasksList) та відображає їх у вигляді списку на сторінці.
-
+const listElem = document.querySelector(".list");// елемент списку ul
 const renderTasks = tasksList => {
-  const listElem = document.querySelector(".list");
+
   listElem.innerHTML = "";// очистка списку перед повторним рендерингом
 
   const listItemsElems = tasksList
@@ -64,14 +64,26 @@ const renderTasks = tasksList => {
   listElem.append(...listItemsElems);
 };
 // Ця функція перемикає стан завдання (виконана/невиконана) при натисканні на чекбокс
-const onCheckboxClick = event => {
-  const taskId = +event.target.dataset.taskId; // отримання ід задачі
-  const task = tasks.find(task => task.id === taskId);// пошук задачі по ід
-  task.done = !task.done; // перемикання стану задачі
-  renderTasks(tasks) //повторне оновлення задач
+const onCheckboxClick = e => {
+
+  const isCheckbox = e.target.matches('.list__item-checkbox');  // Перевіряємо, чи елемент, на який клацнули, є чекбоксом з класом 'list__item-checkbox'
+
+  if (!isCheckbox) {
+    return; // Якщо елемент не є чекбоксом, виходимо з функції
+  }
+  const taskId = parseInt(e.target.dataset.taskId, 10);  // Отримуємо значення атрибуту data-task-id, яке зберігає id завдання
+  const taskData = tasks.find(task => task.id === taskId); // Знаходимо відповідне завдання в масиві tasks за допомогою функції find
+  // Порівнюємо task.id (яке є числом) з taskId (також числом після parseInt)
+
+  if (taskData) { // Якщо завдання знайдено (taskData не є undefined)
+    taskData.done = e.target.checked;   // Оновлюємо значення властивості 'done' завдання відповідно до стану чекбокса
+    renderTasks(tasks) //повторне оновлення задач
+  }
+
+
 };
 
-
+listElem.addEventListener('click', onCheckboxClick) // вішаємо обробник чекбоксу на потрібний елемент списку
 
 // Ця функція створює нове завдання і додає її до масиву завдань при натисканні на кнопку "Create".
 const createTask = () => {
@@ -80,13 +92,17 @@ const createTask = () => {
 
   if (!text) return;// перевірка що поле не пусте
 
-  const newTask = {// створення нової задачі
+  // const newTask = {// створення нової задачі
+  //   id: String(Date.now()),// замість ід  - поточна дата
+  //   text,
+  //   done: false,
+  // }
+
+  tasks.push({
     id: String(Date.now()),// замість ід  - поточна дата
     text,
     done: false,
-  }
-
-  tasks.push(newTask);// додавання задачі в масив
+  }); // додавання задачі в масив + створення нової задачі
   taskInputElem.value = '' // очистка поля вводу
   renderTasks(tasks) // повторний рендеринг списку
 };
