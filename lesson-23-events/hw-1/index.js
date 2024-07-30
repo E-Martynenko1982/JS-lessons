@@ -2,31 +2,32 @@
 // 'id', 'text' 'done'
 const tasks = [
   {
-    id: String(Date.now()),
+    id: 1,
     text: 'Test a car',
     done: false,
   },
   {
-    id: String(Date.now()),
+    id: 2,
     text: 'Swim in river',
     done: false,
   },
   {
-    id: String(Date.now()),
+    id: 3,
     text: 'Dinner with wife',
     done: false,
   },
   {
-    id: String(Date.now()),
+    id: 4,
     text: 'Learn task with Gromcode',
     done: true,
   },
   {
-    id: String(Date.now()),
+    id: 5,
     text: 'Take a hour of english lesson',
     done: true,
   }
 ];
+
 
 // Функція renderTasks приймає масив завдань (tasksList) та відображає їх у вигляді списку на сторінці.
 
@@ -64,7 +65,7 @@ const renderTasks = tasksList => {
 };
 // Ця функція перемикає стан завдання (виконана/невиконана) при натисканні на чекбокс
 const onCheckboxClick = event => {
-  const taskId = event.target.dataset.taskId; // отримання ід задачі
+  const taskId = +event.target.dataset.taskId; // отримання ід задачі
   const task = tasks.find(task => task.id === taskId);// пошук задачі по ід
   task.done = !task.done; // перемикання стану задачі
   renderTasks(tasks) //повторне оновлення задач
