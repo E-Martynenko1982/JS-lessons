@@ -1,15 +1,12 @@
 const formElem = document.querySelector('.login-form');
-const buttonElem = document.querySelector('.submit-button');
+const submitElem = document.querySelector('.submit-button');
 formElem.addEventListener('input', () => {
   if (formElem.checkValidity()) {
-    buttonElem.removeAttribute('disabled');
+    submitElem.removeAttribute('disabled');
   } else {
-    buttonElem.setAttribute('disabled', true);
+    submitElem.setAttribute('disabled', true);
   }
 });
-
-
-
 
 formElem.addEventListener('submit', event => {
   event.preventDefault();
@@ -26,7 +23,7 @@ formElem.addEventListener('submit', event => {
     .then(data => {
       alert(JSON.stringify(data));
       formElem.reset();
-      buttonElem.setAttribute('disabled', true);
+      submitElem.setAttribute('disabled', true);
     })
     .catch(error => {
       alert('An error occurred: ' + error.message);
